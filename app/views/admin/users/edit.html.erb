@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 mx-auto">
+			<%= form_for [:admin, @user] do |f| %>
+				<% if @user.category == "Admin" %>
+					<%= f.select :category, ['User'], {include_blank: @user.category}, class: 'sample' %>
+	        <%= f.submit %>
+				<% else %>				
+	        <%= f.select :category, ['Admin'], {include_blank: @user.category}, class: 'sample' %>
+	        <%= f.submit %>
+        <% end %>
+			<% end %>
+		</div>
+	</div>
+</div>
